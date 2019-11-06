@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1> Welcome to TreeSearch! </h1>
+        
+<br> To determine tree species, upload leaf image and then click the "find my tree" button <br><br><br><br>
+
+<div align="center">
+
+<form action="/results">
+
+Upload leaf image here: <input type="file" name="pic"><br><br><br>
+
+<input type="submit" name="button" value="Find My Tree">
+
+</form>
+
+</div>
+
+<br><br><br><br><br><br><br><br><br>
+	
+{% endblock %}

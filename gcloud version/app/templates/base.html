@@ -1,0 +1,44 @@
+<html>
+
+<style>
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 70%;
+}
+
+td, th {
+  border: 1px solid #a6a6a6;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #eeeeee;
+}
+</style>
+
+
+    <head>
+      {% if title %}
+          <title>    {{ title }} - TreeID    </title>
+      {% else %}
+          <title>    Welcome to TreeID    </title>
+      {% endif %}
+    </head>
+    <body>
+        
+        <div>    TreeID: <a    href="/index"> Home    </a>    </div>
+        
+        <hr>
+        
+        {% block content %}{% endblock %}
+        
+    </body>
+    
+</html>
+
+<!-- 
+This is apparently how you comment out in html! 
+-->

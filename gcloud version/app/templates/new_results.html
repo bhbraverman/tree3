@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+         <br> Your leaf most likely comes from a <strong>{{CommonName}}</strong> tree 	 <br><br>
+
+	 <div align = "center">
+
+	 <img src="{{ImageLink}}" alt="Tree Image" width="259" height="194">
+
+	 </div>
+	
+
+<div> 
+
+<h2>Taxonomy:</h2>
+
+<table>
+  <tr>
+    <th>Common Name</th>
+    <td>{{CommonName}}</td>
+  </tr>
+  <tr>
+    <th>Species</th>
+    <td>{{SpeciesName}}</td>
+  </tr>
+  <tr>
+    <th>Genus</th>
+    <td>{{GenusName}}</td>
+  </tr>
+  <tr>
+    <th>Family</th>
+    <td>{{Family}}</td>
+  </tr>
+  <tr>
+    <th>Order</th>
+    <td>{{Order}}</td>
+  </tr>
+
+</table>
+
+<br>
+
+<h2>Characteristics:</h2>
+
+<table>
+  <tr>
+    <th>Leaf Type &nbsp;</th>
+    <td>{{Leaf_Type}}</td>
+  </tr>
+  <tr>
+    <th>Relative Growth Rate</th>
+    <td>{{GrowthRate}}</td>
+  </tr>
+  <tr>
+    <th>Average Mature Height</th>
+    <td>{{MatureHeight_ft}} feet </td>
+  </tr>
+  <tr>
+    <th>Additional Information</th>
+    <td><a href= "{{URLLink}}">Reference for {{UniqueName}} </a> </td>
+  </tr>
+</table>
+
+<br><br>
+	
+{% endblock %}

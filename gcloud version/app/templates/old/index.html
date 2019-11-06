@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+    <h1>    Welcome to Tree-ID    </h1>
+   
+    {% for post in posts %}
+        <div>
+            <p>    <b>{{ post.author.username }} says: </b>   {{ post.body }}    </p>
+        </div>
+    
+    {% endfor %}
+
+{% endblock %}
+
+
+<!-- 
+This is apparently how you comment out in html! 
+-->
