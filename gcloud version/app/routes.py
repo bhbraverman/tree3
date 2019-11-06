@@ -50,9 +50,19 @@ def results():
 @app.route('/newresults')
 def new_results():
     import pandas
-    df = pandas.read_csv('/Users/braverman/Desktop/query_results.csv')
+    from google.cloud import storage
+    storage_client = storage.Client()
+
+    def download_blob(bucket_name1, source_blob_name1, destination_file_name1):
+        bucket = storage_client.get_bucket(bucket_name1)
+        blob1 = bucket.blob(source_blob_name1)
+        blob1.download_to_filename(destination_file_name1)
+        print('Blob {} downloaded to {}.'.format(source_blob_name1, destination_file_name1))
+
+    download_blob('tempml_bucket4', 'query_results.txt', '/tmp/query_results.csv')
+    df = pandas.read_csv('/tmp/query_results.csv')
     return render_template('new_results.html', title='New Results', UniqueName = df['UniqueName'][0], GenusName = df['GenusName'][0], SpeciesName = df['SpeciesName'][0], Family = df['Family'][0], Order = df['Order'][0], CommonName = df['CommonName'][0], Leaf_Type = df['Leaf_Type'][0], GrowthRate = df['GrowthRate'][0], MatureHeight_ft = df['MatureHeight_ft'][0], URLLink = df['URLLink'][0], ImageLink = df['ImageLink'][0])
-    
+
     
 ############################
 
